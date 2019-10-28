@@ -1,3 +1,6 @@
 runtime: python37
 env_variables:
   EXEC_MODE: "production"
+handlers:
+- url: .*
+  script: /backend/main.app
