@@ -9,8 +9,14 @@ jobs:
       - image: circleci/node
     steps:
       - checkout
-      - run: yarn install
-      - run: yarn build
+      - run:
+          name: yarn install
+          command: yarn
+          working_directory: frontend
+      - run:
+          name: yarn build
+          command: yarn build-prod
+          working_directory: frontend
       - persist_to_workspace:
           root: .
           paths:
@@ -30,7 +36,7 @@ jobs:
             gcloud --quiet app deploy app.yaml
 
 workflows:
-  version: 2
+  version: 2.0
   build:
     jobs:
       - build
