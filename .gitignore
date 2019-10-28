@@ -180,3 +180,6 @@ npm-debug.log
 yarn-error.log
 
 # End of https://www.gitignore.io/api/vuejs,emacs,python,appengine,visualstudiocode
+
+# ignore python venv
+venv/
