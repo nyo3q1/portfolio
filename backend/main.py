@@ -1,14 +1,17 @@
-from env import env
-from gcs import Content
+from . import settings
+from .gcs import Content
 
 from flask import Flask, render_template, jsonify, abort
 from flask_cors import CORS
+
+import logging
+logger = logging.getLogger()
 
 app = Flask(__name__,
             static_folder='../frontend/dist/static',
             template_folder='../frontend/dist'
 )
-cors = CORS(app, resources={r"/api/*": {"origins": env.CORS_ORIGINS}})
+cors = CORS(app, resources={r"/api/*": {"origins": settings.CORS_ORIGINS}})
 
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
@@ -29,4 +32,4 @@ def contents(name):
     return jsonify(obj)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8080, debug=True)
+    app.run(host='127.0.0.1', port=8080, debug=True)

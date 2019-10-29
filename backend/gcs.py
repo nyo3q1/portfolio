@@ -1,7 +1,6 @@
+from . import settings
 from google.cloud.storage import Client
 from google.cloud.storage.blob import Blob
-
-BUCKET_NAME = "dev_portfolio_contents"
 
 class Content:
     """
@@ -17,7 +16,7 @@ class Content:
     def bucket(self):
         if self._bucket is None:
             client = Client()
-            self._bucket = client.get_bucket(BUCKET_NAME)
+            self._bucket = client.get_bucket(settings.BUCKET_NAME)
         return self._bucket
 
     def blob(self):
