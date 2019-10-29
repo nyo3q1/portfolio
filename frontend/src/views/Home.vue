@@ -23,7 +23,7 @@ export default {
   },
   methods: {
     getContent () {
-      const path = `${process.env.VUE_APP_BACKEND_ORIGIN}/api/index.md`
+      const path = `/api/index.md`
       axios.get(path)
         .then(response => {
           this.content = response.data.content

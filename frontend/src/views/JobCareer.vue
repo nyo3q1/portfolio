@@ -31,7 +31,7 @@ export default {
   },
   methods: {
     getContent (path) {
-      const url = `${process.env.VUE_APP_BACKEND_ORIGIN}/api/${path}`
+      const url = `/api/${path}`
       axios.get(url)
         .then(response => {
           this.isdir = response.data.isdir
