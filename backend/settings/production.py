@@ -1,2 +1,2 @@
-BUCKET_NAME = "dev_portfolio_contents"
+BUCKET_NAME = "portfolio_contents"
 CORS_ORIGINS = "*"
