@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <p>Content</p>
     <div>
       <markdown-it-vue class="md-body" :content="content" />
     </div>
