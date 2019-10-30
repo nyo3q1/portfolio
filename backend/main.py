@@ -24,12 +24,16 @@ def contents(name):
     if not content.exists():
         abort(404)
 
-    obj = {
+    if content.isdir():
+        _name = name if name.endswith("/") else name + "/"
+        index_md = Content(_name + "index.md")
+        if index_md.exists():
+            content = index_md
+
+    return jsonify({
         'isdir': content.isdir(),
         'content': content.get()
-    }
-
-    return jsonify(obj)
+    })
 
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=8080, debug=True)

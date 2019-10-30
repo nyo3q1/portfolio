@@ -1,6 +1,5 @@
 <template>
-  <div class="home">
-    <p>職務履歴</p>
+  <div>
     <div v-if="isdir">
       <ul>
         <li v-for="c in content" v-bind:key="c.index">

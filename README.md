@@ -1,5 +1,6 @@
 # なにこれ
-ポートフォリオだよ
+ポートフォリオだよ、ここにデプロイされるよ。
+https://portfolio-256304.appspot.com
 
 ## 環境
 GAE + GCS + Python3/Flask + Vuejs
